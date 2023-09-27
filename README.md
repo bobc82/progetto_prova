@@ -1,12 +1,10 @@
 # progetto_prova
 
-# requirements: 
+Requirements: 
+ - Python, flask, matplotlib, pandas, numpy, jupyter
 
-Python, flask, matplotlib, pandas, numpy, jupyter
+To run notebook in the console prompt write:
+ - jupyter notebook
 
-# to run notebook in the console prompt write:
-jupyter notebook
-
-# to run flask project in the console prompt write_
-
-python home.py
+To run flask project in the console prompt write_
+ - python home.py
