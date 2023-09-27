@@ -3,8 +3,9 @@
 Requirements: 
  - Python, flask, matplotlib, pandas, numpy, jupyter
 
-To run notebook in the console prompt write:
+To run notebook in the console prompt:
  - jupyter notebook
+and select progetto_prova.ipynb
 
-To run flask project in the console prompt write_
+To run flask project in the console prompt:
  - python home.py
