@@ -1,7 +1,10 @@
 <html>
-	<body>
-		<p>PREDIZIONE REGRESSORE LINEARE: {{pred}}</p>
-		<p>PREDIZIONE REGRESSORE RANSAC: {{rpred}}</p>
-		<h2><a href="/">Torna alla Home</a></h2>
+	<head>
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+	</head>
+	<body class="rcorners1">
+		<p>MEDV REGRESSORE LINEARE: {{pred}}</p>
+		<p>MEDV REGRESSORE RANSAC: {{rpred}}</p>
+		<a href="/" class="btn">Torna alla Home</a>
 	</body>
 </html>
