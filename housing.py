@@ -9,3 +9,9 @@ def visualizza_dataset_html():
 	df = pd.read_csv('housing.data.txt', sep='\s+')
 	df.columns=['CRIM','ZN','INDUS','CHAS','NOX','RM','AGE','DIS','RAD','TAX','PTRATIO','B','LSTAT','MEDV']
 	return df.head().to_html()
+
+def minimo_medv():
+	df = pd.read_csv('housing.data.txt', sep='\s+')
+	df.columns=['CRIM','ZN','INDUS','CHAS','NOX','RM','AGE','DIS','RAD','TAX','PTRATIO','B','LSTAT','MEDV']
+	y=df['MEDV'].values
+	return min(y)
