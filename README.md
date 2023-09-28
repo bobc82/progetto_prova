@@ -1,7 +1,7 @@
 # progetto_prova
 
 Requirements: 
- - Python, flask, matplotlib, pandas, numpy, jupyter
+ - Python, flask, matplotlib, pandas, numpy, jupyter, pickle
 
 To run notebook in the console prompt:
 ```
