@@ -2,7 +2,7 @@ import pickle
 import os
 from housing import minimo_medv
 
-# carico modello LinearRegressor serielizzato e stampo la predizione da un nuovo valore in input
+# carico modello LinearRegressor serializzato e stampo la predizione da un nuovo valore in input
 def linear_housing(rm):
 	rlin = pickle.load(open(os.path.join('predictor', 'pkl_objects', 'lin_regressor.pkl'),'rb'))
 	y_pred = rlin.predict(rm)
@@ -13,7 +13,7 @@ def linear_housing(rm):
 		y_pred_f = minimo_medv()
 	return y_pred_f
 
-# carico modello RANSACRegressor serielizzato e stampo la predizione da un nuovo valore in input
+# carico modello RANSACRegressor serializzato e stampo la predizione da un nuovo valore in input
 def ransac_housing(rm):
 	ran = pickle.load(open(os.path.join('predictor', 'pkl_objects', 'ransac_regressor.pkl'),'rb'))
 	y_pred_ransac = ran.predict(rm)
