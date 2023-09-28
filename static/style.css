@@ -45,6 +45,11 @@ input[type=submit] {
   text-align: left;
   background-color: #0078d7;
   color: white;
+  border:0px;
+}
+
+.dataframe td {
+  border:0px;
 }
 
 .dataframe tr:nth-child(even){background-color: #f2f2f2;}
