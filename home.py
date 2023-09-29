@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from regression_predict import linear_housing, ransac_housing, errore_quadratico, punteggio_r2, quadratic_housing, punteggio_r2_quad
+from regression_predict import linear_housing, ransac_housing, punteggio_r2, quadratic_housing, punteggio_r2_quad
 from housing import visualizza_dataset_html
 
 app = Flask(__name__)
@@ -28,9 +28,9 @@ def visualizza_plot_quad():
 #stampa errore quadratico medio e punteggio r2
 @app.route('/val')
 def valutazione_modelli():
-	errq_str = errore_quadratico()
+	#errq_str = errore_quadratico()
 	r2_str = punteggio_r2()
-	return render_template("valutazione.html", errq = errq_str, r2str= r2_str)
+	return render_template("valutazione.html", r2str= r2_str)
 
 #stampa errore punteggio r2 regressione quadratica
 @app.route('/valquad')
