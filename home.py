@@ -25,20 +25,20 @@ def visualizza_plot():
 def visualizza_plot_quad():
 	return render_template("graphicsquad.html")
 
-#stampo errore quadratico medio e punteggio r2
+#stampa errore quadratico medio e punteggio r2
 @app.route('/val')
 def valutazione_modelli():
 	errq_str = errore_quadratico()
 	r2_str = punteggio_r2()
 	return render_template("valutazione.html", errq = errq_str, r2str= r2_str)
 
-#stampo errore punteggio r2 regressione quadratica
+#stampa errore punteggio r2 regressione quadratica
 @app.route('/valquad')
 def valutazione_modello_quad():
 	r2_str = punteggio_r2_quad()
 	return render_template("valutazionequad.html", r2str= r2_str)
 
-#Questa è l'url di "atterraggio" a seguito del submit all'interno del form precedente. La funzione predict legge il valore numerico rm dal form e poi fornisce due predizioni:
+#Url di "atterraggio" a seguito del submit all'interno del form precedente. La funzione predict legge il valore numerico rm dal form e poi fornisce due predizioni:
 #la prima è data dalla funzione linear_housing che fa uso del modello LinearRegressor e la seconda, ransac_housing, fa uso del modello RANSACRegressor. Le funzioni sono state
 #importate dal file regression_predict.py. Infine stampo a video i risultati visualizzando il template result.html a cui passo pred ed rpred. 
 @app.route('/predict', methods = ['POST'])
