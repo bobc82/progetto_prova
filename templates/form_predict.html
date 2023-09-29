@@ -3,8 +3,15 @@
 		<link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
 	</head>
 	<body>
-		<a href="/data" class="btn">Visualizza HEAD Dataset Housing</a>
-		<a href="/graphics" class="btn">Grafici regressori tra RM e MEDV</a>
+		<h3>Modello a regressione lineare dateset Housing</h3>
+		<ul>
+			<li><b>HEAD dataset Housing</b>: visualizza le prime 5 righe del dataset Housing in una pagina html</li>
+			<li><b>Regressione tra RM e MEDV</b>: visualizza i grafici (prodotti e salvati come immagini dall'esecuzione di jupyter) sia della regressione lineare semplice e la regressione RANSAC tra RM e MEDV</li>
+			<li><b>Valutazione prestazioni</b>: visualizzazione errore quadratico medio e punteggio R2</li>
+			<li><b>Visualizza MEDV predetto</b>: si fornisce una predizione del prezzo medio dato il numero medio di stanze</li>
+		</ul>
+		<a href="/data" class="btn">HEAD Dataset Housing</a>
+		<a href="/graphics" class="btn">Regressione tra RM e MEDV</a>
 		<a href="/val" class="btn">Valutazione prestazioni</a>
 		<form action="http://localhost:5000/predict" method="post">
 			<p>Inserisci il numero medio di stanze (RM):</p>
