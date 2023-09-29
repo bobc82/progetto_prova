@@ -18,5 +18,16 @@
 			<p><input type="numeric" name="rm" /></p>
 			<p><input type="submit" value="Visualizza MEDV predetto" /></p>
 		</form>
+		<h3>Modello a regressione polinomiale dateset Housing</h3>
+		<li><b>Regressione tra LSTAT e MEDV</b>: visualizza il grafico (prodotto e salvato come immagine dall'esecuzione di jupyter) della regressione quadratica tra LSTAT e MEDV</li>
+		<li><b>Visualizza MEDV predetto</b>: si fornisce una predizione del prezzo medio dato il tasso di povertà</li>
+		<li><b>Punteggio R2</b>: Punteggio R2 regressione quadratica</li>
+		<a href="/graphicsquad" class="btn">Regressione quadratica tra LSTAT e MEDV</a>
+		<a href="/valquad" class="btn">Punteggio R2</a>
+		<form action="http://localhost:5000/predictquad" method="post">
+			<p>Inserisci il tasso di povertà medio (STAT):</p>
+			<p><input type="numeric" name="lstat" /></p>
+			<p><input type="submit" value="Visualizza MEDV predetto" /></p>
+		</form>
 	</body>
 </html>

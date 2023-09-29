@@ -4,6 +4,7 @@ from housing import minimo_medv, carica_dataset
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error
 from sklearn.metrics import r2_score
+from sklearn.preprocessing import PolynomialFeatures
 
 # carico modello LinearRegressor serializzato e stampo la predizione da un nuovo valore in input
 def linear_housing(rm):
@@ -26,6 +27,18 @@ def ransac_housing(rm):
 	else:
 		y_pred_ransac_f = minimo_medv()
 	return y_pred_ransac_f
+
+# carico modello LinearRegressor serializzato con regressione quadratica e stampo la predizione da un nuovo valore in input
+def quadratic_housing(lstat):
+	rquad = pickle.load(open(os.path.join('predictor', 'pkl_objects', 'quad_regressor.pkl'),'rb'))
+	quadratic = PolynomialFeatures(degree=2)
+	y_pred = rquad.predict(quadratic.fit_transform(lstat))
+	y_pred_f = 0
+	if y_pred[0] > 0:
+		y_pred_f = y_pred[0]
+	else:
+		y_pred_f = minimo_medv()
+	return y_pred_f
 
 #valutazione prestazioni: stampo errore quadratico medio
 def errore_quadratico():
@@ -52,6 +65,18 @@ def punteggio_r2():
 	rtrain = r2_score(y_train,y_train_pred)
 	rtest= r2_score(y_test, y_test_pred)
 	return "R2 train " + str(rtrain) + " test " + str(rtest)
+
+def punteggio_r2_quad():
+	rquadmul = pickle.load(open(os.path.join('predictor', 'pkl_objects', 'quad_regressor.pkl'),'rb'))
+	df = carica_dataset()
+	X=df[['LSTAT']].values
+	y=df['MEDV'].values
+	quadratic = PolynomialFeatures(degree=2)
+	X_quad = quadratic.fit_transform(X)
+	y_pred_q = rquadmul.predict(X_quad)
+	rduequad = r2_score(y, y_pred_q)
+	return "Punteggio R2 regressione polinomiale " + str(rduequad)
+
 
 
 
