@@ -13,3 +13,6 @@ To run flask project in the console prompt:
 ```
 python home.py
 ```
+
+Deploy project on:
+[http://robbyc82.pythonanywhere.com/](http://robbyc82.pythonanywhere.com/)
