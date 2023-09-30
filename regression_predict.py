@@ -50,6 +50,7 @@ def punteggio_r2():
 	rdue = r2_score(y, y_pred)
 	return "Punteggio R2 regressione lineare " + str(rdue)
 
+#valutazione prestazioni: stampo punteggio r2 della regressione polinomiale
 def punteggio_r2_quad():
 	rquadmul = pickle.load(open(os.path.join('predictor', 'pkl_objects', 'quad_regressor.pkl'),'rb'))
 	df = carica_dataset()
