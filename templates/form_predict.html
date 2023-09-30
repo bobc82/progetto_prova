@@ -3,31 +3,35 @@
 		<link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
 	</head>
 	<body>
-		<h3>Modello a regressione lineare dateset Housing</h3>
-		<ul>
-			<li><b>HEAD dataset Housing</b>: visualizza le prime 5 righe del dataset Housing in una pagina html</li>
-			<li><b>Regressione tra RM e MEDV</b>: visualizza i grafici (prodotti e salvati come immagini dall'esecuzione di jupyter) sia della regressione lineare semplice e la regressione RANSAC tra RM e MEDV</li>
-			<li><b>Punteggio R2</b>: Punteggio R2 regressione lineare</li>
-			<li><b>Visualizza MEDV predetto</b>: si fornisce una predizione del prezzo medio dato il numero medio di stanze</li>
-		</ul>
-		<a href="/data" class="btn">HEAD Dataset Housing</a>
-		<a href="/graphics" class="btn">Regressione tra RM e MEDV</a>
-		<a href="/val" class="btn">Punteggio R2</a>
-		<form action="http://localhost:5000/predict" method="post">
-			<p>Inserisci un numero medio di stanze (RM) da 1 a 15:</p>
-			<p><input type="number" min="1" max="15" step="0.01" name="rm" /></p>
-			<p><input type="submit" value="Visualizza MEDV predetto" /></p>
-		</form>
-		<h3>Modello a regressione polinomiale dateset Housing</h3>
-		<li><b>Regressione tra LSTAT e MEDV</b>: visualizza il grafico (prodotto e salvato come immagine dall'esecuzione di jupyter) della regressione quadratica tra LSTAT e MEDV</li>
-		<li><b>Visualizza MEDV predetto</b>: si fornisce una predizione del prezzo medio dato il tasso di povertà</li>
-		<li><b>Punteggio R2</b>: Punteggio R2 regressione quadratica</li>
-		<a href="/graphicsquad" class="btn">Regressione quadratica tra LSTAT e MEDV</a>
-		<a href="/valquad" class="btn">Punteggio R2</a>
-		<form action="http://localhost:5000/predictquad" method="post">
-			<p>Inserisci il tasso di povertà (LSTAT) da 1 a 50:</p>
-			<p><input type="number" min="1" max="50" step="0.01" name="lstat" /></p>
-			<p><input type="submit" value="Visualizza MEDV predetto" /></p>
-		</form>
+		<div class="rcorners1">
+			<h3>Modello a regressione lineare dateset Housing</h3>
+			<ul>
+				<li><b>HEAD dataset Housing</b>: visualizza le prime 5 righe del dataset Housing in una pagina html</li>
+				<li><b>Regressione tra RM e MEDV</b>: visualizza i grafici (prodotti e salvati come immagini dall'esecuzione di jupyter) sia della regressione lineare semplice e la regressione RANSAC tra RM e MEDV</li>
+				<li><b>Punteggio R2</b>: Punteggio R2 regressione lineare</li>
+				<li><b>Visualizza MEDV predetto</b>: si fornisce una predizione del prezzo medio dato il numero medio di stanze</li>
+			</ul>
+			<a href="/data" class="btn">HEAD Dataset Housing</a>
+			<a href="/graphics" class="btn">Regressione tra RM e MEDV</a>
+			<a href="/val" class="btn">Punteggio R2</a>
+			<form action="http://localhost:5000/predict" method="post">
+				<p>Inserisci un numero medio di stanze (RM) da 1 a 15:</p>
+				<p><input type="number" min="1" max="15" step="0.01" name="rm" /></p>
+				<p><input type="submit" value="Visualizza MEDV predetto" /></p>
+			</form>
+		</div>
+		<div class="rcorners1">
+			<h3>Modello a regressione polinomiale dateset Housing</h3>
+			<li><b>Regressione tra LSTAT e MEDV</b>: visualizza il grafico (prodotto e salvato come immagine dall'esecuzione di jupyter) della regressione quadratica tra LSTAT e MEDV</li>
+			<li><b>Visualizza MEDV predetto</b>: si fornisce una predizione del prezzo medio dato il tasso di povertà</li>
+			<li><b>Punteggio R2</b>: Punteggio R2 regressione quadratica</li>
+			<a href="/graphicsquad" class="btn">Regressione quadratica tra LSTAT e MEDV</a>
+			<a href="/valquad" class="btn">Punteggio R2</a>
+			<form action="http://localhost:5000/predictquad" method="post">
+				<p>Inserisci il tasso di povertà (LSTAT) da 1 a 50:</p>
+				<p><input type="number" min="1" max="50" step="0.01" name="lstat" /></p>
+				<p><input type="submit" value="Visualizza MEDV predetto" /></p>
+			</form>
+		</div>
 	</body>
 </html>
