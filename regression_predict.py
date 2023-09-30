@@ -40,33 +40,7 @@ def quadratic_housing(lstat):
 		y_pred_f = minimo_medv()
 	return y_pred_f
 
-#valutazione prestazioni: stampo errore quadratico medio
-# def errore_quadratico():
-# 	rlinmul = pickle.load(open(os.path.join('predictor', 'pkl_objects', 'linmul_regressor.pkl'),'rb'))
-# 	df = carica_dataset()
-# 	X=df.iloc[:,:-1].values
-# 	y=df['MEDV'].values
-# 	X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.3,random_state=1)
-# 	y_train_pred=rlinmul.predict(X_train)
-# 	y_test_pred=rlinmul.predict(X_test)
-# 	msetrain = mean_squared_error(y_train,y_train_pred)
-# 	msetest= mean_squared_error(y_test, y_test_pred)
-# 	return "MSE train " + str(msetrain) + " test " + str(msetest)
-
-#valutazione prestazioni: stampo punteggio r2 (l'errore quadratico medio non fornisce una predizione standard, poichè i valori possono essere su scala diversa)
-# def punteggio_r2():
-# 	rlinmul = pickle.load(open(os.path.join('predictor', 'pkl_objects', 'linmul_regressor.pkl'),'rb'))
-# 	df = carica_dataset()
-# 	X=df.iloc[:,:-1].values
-# 	y=df['MEDV'].values
-# 	X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.3,random_state=1)
-# 	y_train_pred=rlinmul.predict(X_train)
-# 	y_test_pred=rlinmul.predict(X_test)
-# 	rtrain = r2_score(y_train,y_train_pred)
-# 	rtest= r2_score(y_test, y_test_pred)
-# 	return "R2 train " + str(rtrain) + " test " + str(rtest)
-
-#valutazione prestazioni: stampo punteggio r2 (l'errore quadratico medio non fornisce una predizione standard, poichè i valori possono essere su scala diversa)
+#valutazione prestazioni: stampo punteggio r2 della regressione lineare semplice (l'errore quadratico medio non fornisce una predizione standard, poichè i valori possono essere su scala diversa)
 def punteggio_r2():
 	rlin = pickle.load(open(os.path.join('predictor', 'pkl_objects', 'lin_regressor.pkl'),'rb'))
 	df = carica_dataset()
