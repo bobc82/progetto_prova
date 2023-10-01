@@ -15,7 +15,7 @@ def linear_housing(rm):
 		y_pred_f = y_pred[0]
 	else:
 		y_pred_f = minimo_medv()
-	return y_pred_f
+	return round(y_pred_f, 3)
 
 # carico modello RANSACRegressor serializzato e stampo la predizione da un nuovo valore in input
 def ransac_housing(rm):
@@ -26,7 +26,7 @@ def ransac_housing(rm):
 		y_pred_ransac_f = y_pred_ransac[0]
 	else:
 		y_pred_ransac_f = minimo_medv()
-	return y_pred_ransac_f
+	return round(y_pred_ransac_f, 3)
 
 # carico modello LinearRegressor serializzato con regressione quadratica e stampo la predizione da un nuovo valore in input
 def quadratic_housing(lstat):
@@ -38,7 +38,7 @@ def quadratic_housing(lstat):
 		y_pred_f = y_pred[0]
 	else:
 		y_pred_f = minimo_medv()
-	return y_pred_f
+	return round(y_pred_f, 3)
 
 #valutazione prestazioni: stampo punteggio r2 della regressione lineare semplice (l'errore quadratico medio non fornisce una predizione standard, poichè i valori possono essere su scala diversa)
 def punteggio_r2():
@@ -48,7 +48,7 @@ def punteggio_r2():
 	y=df['MEDV'].values
 	y_pred = rlin.predict(X)
 	rdue = r2_score(y, y_pred)
-	return "Punteggio R2 regressione lineare " + str(rdue)
+	return "Punteggio R2 regressione lineare " + str(round(rdue, 3))
 
 #valutazione prestazioni: stampo punteggio r2 della regressione polinomiale
 def punteggio_r2_quad():
@@ -60,7 +60,7 @@ def punteggio_r2_quad():
 	X_quad = quadratic.fit_transform(X)
 	y_pred_q = rquadmul.predict(X_quad)
 	rduequad = r2_score(y, y_pred_q)
-	return "Punteggio R2 regressione polinomiale " + str(rduequad)
+	return "Punteggio R2 regressione polinomiale " + str(round(rduequad, 3))
 
 
 
