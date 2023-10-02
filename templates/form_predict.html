@@ -16,7 +16,7 @@
 			<a href="/val" class="btn">Punteggio R2</a>
 			<form action="http://localhost:5000/predict" method="post">
 				<p>Inserisci un numero medio di stanze (RM) da 1 a 15:</p>
-				<p><input type="number" min="1" max="15" step="0.01" name="rm" /></p>
+				<p><input type="number" min="1" max="15" step="0.01" name="rm" required="" /></p>
 				<p><input type="submit" value="Visualizza MEDV predetto" /></p>
 			</form>
 		</div>
@@ -29,7 +29,7 @@
 			<a href="/valquad" class="btn">Punteggio R2</a>
 			<form action="http://localhost:5000/predictquad" method="post">
 				<p>Inserisci il tasso di povertà (LSTAT) da 1 a 50:</p>
-				<p><input type="number" min="1" max="50" step="0.01" name="lstat" /></p>
+				<p><input type="number" min="1" max="50" step="0.01" name="lstat" required="" /></p>
 				<p><input type="submit" value="Visualizza MEDV predetto" /></p>
 			</form>
 		</div>

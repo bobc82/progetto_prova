@@ -3,7 +3,7 @@
 Requirements: 
  - Python, flask, matplotlib, pandas, numpy, jupyter, pickle
 
-To run notebook in the console prompt:
+To run notebook in the console prompt go in the root directory of the project (containing the file progetto_prova.ipynb) and execute:
 ```
 jupyter notebook
 ```
