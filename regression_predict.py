@@ -11,6 +11,7 @@ def linear_housing(rm):
 	rlin = pickle.load(open(os.path.join('predictor', 'pkl_objects', 'lin_regressor.pkl'),'rb'))
 	y_pred = rlin.predict(rm)
 	y_pred_f = 0
+	#Inserisco controllo nel caso in cui predict restituisce un valore negativo. Al posto di esso metto il prezzo minimo presente all'interno del dataset
 	if y_pred[0] > 0:
 		y_pred_f = y_pred[0]
 	else:
